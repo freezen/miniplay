@@ -1,0 +1,217 @@
+<html>
+<!-- by @Saa noCopyRight-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="game,html5,canvas">
+<title>Shoot game - by @Saa</title>
+<style>
+body{
+	margin:0px;
+	padding:0px;
+	background:black;
+}
+canvas{
+	position:absolute;
+	margin:0px;
+	padding:0px;
+	border:1px solid black;
+}
+img {
+	display:none;
+	margin:0px;
+	padding:0px;
+}
+</style>
+
+</head>
+<body>
+	<div id="srcImg">
+		<img src="./img/background.jpg" id="background">
+		<img src="./img/background1.jpg" id="background1">
+		<img src="./img/background2.jpg" id="background2">
+		<img src="./img/background3.jpg" id="background3">
+		<img src="./img/background4.jpg" id="background4">
+		<img src="./img/background5.jpg" id="background5">
+		<img src="./img/background6.jpg" id="background6">
+		<img src="./img/background7.jpg" id="background7">
+		<img src="./img/good.jpg" id="good">
+		<img src="./img/bullet1.png" id="bullet1">
+		<img src="./img/fire1.png" id="fire1">
+		<img src="./img/bullet1_enemy.png" id="bullet1_enemy">
+		<img src="./img/bullet2_enemy.png" id="bullet2_enemy">
+		<img src="./img/bullet3_enemy.png" id="bullet3_enemy">
+		<img src="./img/bullet4_enemy.png" id="bullet4_enemy">
+		<img src="./img/badboy1.png" id="badboy1">
+		<img src="./img/badboy2.png" id="badboy2">
+		<img src="./img/badboy3.png" id="badboy3">
+		<img src="./img/clouds.png" id="clouds">
+		<img src="./img/cloudsblack.png" id="cloudsblack">
+		<img src="./img/score.png" id="score">
+		<img src="./img/japanese.png" id="japanese">
+		<img src="./img/player00.png" id="player00">
+		<img src="./img/player01.png" id="player01">
+		<img src="./img/player_left_00.png" id="player_left_00">
+		<img src="./img/player_left_01.png" id="player_left_01">
+		<img src="./img/player_left_10.png" id="player_left_10">
+		<img src="./img/player_left_11.png" id="player_left_11">
+		<img src="./img/player_right_00.png" id="player_right_00">
+		<img src="./img/player_right_01.png" id="player_right_01">
+		<img src="./img/player_right_10.png" id="player_right_10">
+		<img src="./img/player_right_11.png" id="player_right_11">
+		<img src="./img/player_shadow.png" id="player_shadow">
+		<img src="./img/noDie.png" id="noDieImg">
+		<img src="./img/beFired1.png" id="beFired1">
+		<img src="./img/beFired2.png" id="beFired2">
+		<img src="./img/beFired3.png" id="beFired3">
+		<img src="./img/fightNext.png" id="fightNext">
+
+		<img src="./img/explode1.png" id="explode1">
+		<img src="./img/explode2.png" id="explode2">
+		<img src="./img/explode3.png" id="explode3">
+		<img src="./img/explode4.png" id="explode4">
+		<img src="./img/explode5.png" id="explode5">
+		<img src="./img/explode6.png" id="explode6">
+		<img src="./img/explode7.png" id="explode7">
+		<img src="./img/explode8.png" id="explode8">
+		<img src="./img/explode9.png" id="explode9">
+		<img src="./img/explode9.png" id="explode10">
+		<img src="./img/explode9.png" id="explode11">
+		<img src="./img/explode9.png" id="explode12">
+		<img src="./img/explode9.png" id="explode13">
+		<img src="./img/explode9.png" id="explode14">
+		<img src="./img/explode9.png" id="explode15">
+		<img src="./img/explode9.png" id="explode16">
+		<img src="./img/explode9.png" id="explode17">
+		<img src="./img/explode9.png" id="explode18">
+		<img src="./img/explode9.png" id="explode19">
+		<img src="./img/explode9.png" id="explode20">
+
+		<img src="./img/nextTime.png" id="nextTime">
+		<img src="./img/logo.png" id="logo">
+		<img src="./img/logo(1).png" id="logo1">
+		<img src="./img/logo(2).png" id="logo2">
+		<img src="./img/logo(3).png" id="logo3">
+		<img src="./img/menubg.jpg" id="menubg">
+
+		
+	</div>
+
+	<div id="game">
+		<canvas id="main" width="512" height="696"></canvas>
+	</div>
+
+	<div>
+		<audio id="back" loop>
+		<source src="./music/init.mp3" />
+		</audio>
+	</div>
+
+	<div>
+		<audio id="fire3" >
+		<source src="./music/fire3.mp3" />
+		</audio>
+	</div>
+
+	
+
+	<div>
+		<audio id="init" >
+		<source src="./music/back.mp3" />
+		</audio>
+	</div>
+
+	<div>
+		<audio id="first" >
+		<source src="./music/first.mp3" />
+		</audio>
+	</div>
+
+	<div>
+		<audio id="double" >
+		<source src="./music/double.mp3" />
+		</audio>
+	</div>
+
+	<div>
+		<audio id="three" >
+		<source src="./music/three.mp3" />
+		</audio>
+	</div>
+	<div>
+		<audio id="four" >
+		<source src="./music/four.mp3" />
+		</audio>
+	</div>
+
+	<div>
+		<audio id="five" >
+		<source src="./music/five.mp3" />
+		</audio>
+	</div>
+	
+	<div>
+		<audio id="win" >
+		<source src="./music/win.mp3" />
+		</audio>
+	</div>
+	
+	<div>
+		<audio id="six" >
+		<source src="./music/six.mp3" />
+		</audio>
+	</div>
+
+	
+	
+	
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/player.js"></script>
+	<script type="text/javascript" src="./js/ground.js"></script>
+	<script type="text/javascript" src="./js/Enemy.js"></script>
+
+	
+	<script type="text/javascript">
+		var gameStart;
+
+		var key=new Array();
+		var fire1 = document.getElementById("fire1");
+		var enemys=new Array();
+		var bullets=new Array();
+		var enemy_bullets=new Array();
+		var time=1;
+		var img_bomb;
+		var image_bomb;
+
+		var m_back=document.getElementById("back");
+		var m_fire3=document.getElementById("fire3");
+		var m_win=document.getElementById("win");
+		var m_init=document.getElementById("init");
+		var m_first=document.getElementById("first");
+		var m_double=document.getElementById("double");
+		var m_three=document.getElementById("three");
+		var m_four=document.getElementById("four");
+		var m_five=document.getElementById("five");
+		var m_six=document.getElementById("six");
+
+		var music_i=1;
+		var music_j=0;
+
+		var zhen_time=1;
+		var zhen_trigg=0;
+		var zhen_my;
+
+		//键值 up down判断 初始化
+		var my_i=0;
+		for(my_i=0;my_i<100;my_i++){
+			key[my_i]=false;
+		}
+		
+		window.onload = function(){
+			myCanvas = document.getElementById("main");
+	        g = myCanvas.getContext("2d");
+			main();
+		}
+	</script>
+
+</body></html>

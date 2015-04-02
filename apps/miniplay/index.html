@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://goratchet.com/examples/app-movies/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Mini Play</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="./css/ratchet.min.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./js/ratchet.min.js"></script>
+    <script src="./js/jquery-2.1.3.min.js"></script>
+    <script src="./js/data.js"></script>
+  </head>
+  <body>
+    <header class="bar bar-nav">
+
+      <a class="icon icon-home pull-left" href="./index.html"></a>
+      <a class="icon icon-person pull-right" href="#settingsModal"></a>
+      <h1 class="title">小游戏合集</h1>
+    </header>
+
+    <!--<div class="bar bar-standard bar-header-secondary">
+      <form>
+        <input type="search" placeholder="Search">
+      </form>
+    </div>-->
+
+    <div class="content">
+
+      <div class="slider">
+        <div class="slide-group ads-list">
+          
+        </div>
+      </div>
+
+      <ul class="table-view games-list">
+        
+      </ul>
+
+      <script class="js-custom">
+
+        var list=games.list;
+
+        //deal with the main list content % the nav ads scroll bar
+        var contentForAds='';
+        var contentForList='';
+        var arrayForAds=[];
+        var arrayForList=[];
+        for(var i in list){ 
+          arrayForList.push(""+
+            "<li class='table-view-cell media'>"+
+              "<a class='navigate-right' href='"+"./app.html?t="+list[i].name+"' data-transition='slide-in'>"+
+                "<img class='media-object pull-left' src='"+list[i].src+"/images/cover.png"+"'>"+
+                "<div class='media-body'>"+list[i].label+"<p>"+list[i].info+"</p></div>"+
+              "</a>"+
+            "</li>"+
+          "");
+
+          if(list[i].level=='1'){ 
+            arrayForAds.push(
+              "<div class='slide'>"+
+                "<a href='"+"./app.html?t="+list[i].name+"'><img src='"+list[i].src+"/images/ad.png"+"' width='640' height='300'></a>"+
+              "</div>"
+            );
+          }
+        }
+        contentForAds=arrayForAds.join('');
+        contentForList=arrayForList.join('');
+        $('.ads-list').html(contentForAds);
+        $('.games-list').html(contentForList);
+
+
+
+        //use in ratchet to load js in loading other page
+        window.addEventListener('push', function () {  
+            var scriptsList = document.querySelectorAll('script.js-custom');  
+            for (var i = 0; i < scriptsList.length; ++i) {  
+                eval(scriptsList[i].innerHTML);  
+            }  
+        });  
+      </script>
+    </div><!-- /.content -->
+
+    <!-- Settings modal -->
+    <div id="settingsModal" class="modal">
+      <header class="bar bar-nav" style='z-index:10000;'>
+        <a class="icon icon-close pull-right" href="./index.html#settingsModal"></a>
+        <h1 class="title">玩家空间</h1>
+      </header>
+
+      <div class="content">
+        <form class="input-group">
+          <input type="text" placeholder="用户名">
+          <input type="password" placeholder="密码">
+          <input type="email" placeholder="邮箱">
+        </form>
+
+        <button class="btn btn-positive btn-block">登陆(自动注册)</button>
+        
+        <div class="content-padded">
+          <p>关注我们: <a>微信公众号 - weixin_miniplay </a></p>
+          <p>联系我们: f_dstandout@126.com</p>
+        </div>
+      </div>
+    </div><!-- /.modal -->
+  
+
+  </body>
+  
+
+</html>

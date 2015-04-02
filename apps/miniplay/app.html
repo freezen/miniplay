@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://goratchet.com/examples/app-movies/index.html -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Mini Play</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="./css/ratchet.min.css">
+    <link rel="stylesheet" href="./css/app.css">
+  </head>
+  <body>
+    <header class="bar bar-nav">
+      <a class="icon icon-home pull-left" href="./index.html"></a>
+      <a class="icon icon-person pull-right" href="#settingsModal"></a>
+      <h1 class="title">小游戏合集</h1>
+    </header>
+
+    <div class="content">
+      <script class="js-custom">
+        var url=location.search;
+        //document.getElementById('app').src='./'+url.split('t=')[1]+'/index.html';
+        location.href='./'+url.split('t=')[1]+'/index.html';
+      </script>
+    </div><!-- /.content -->
+
+  
+    
+  </body>
+</html>

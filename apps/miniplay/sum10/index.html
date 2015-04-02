@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>合到10-4399</title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui" name="viewport" />
+	<meta content=”telephone=no,email=no” name=”format-detection” />
+    <link rel="shortcut icon" href="res/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="res/weixin_icon.jpg" />
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="full-screen" content="yes"/>
+	<meta name="screen-orientation" content="portrait"/>
+	<meta name="x5-fullscreen" content="true"/>
+	<meta name="360-fullscreen" content="true"/>
+    <script src="../js/insertAds.js"></script>
+	<style>
+		body, canvas, div {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			-khtml-user-select: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			font-family: "Helvetica Neue";
+			font-color: #a67471;
+			color: #a67471;
+		}
+		.container {
+			margin:0px auto;
+			max-width: 800px;
+		}
+		.share {
+			width:240px;
+			padding: 10px;
+		}
+		.maskBanner {
+			width : 100%;
+			display: none;
+			background-color: #FFFFFF;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: 1000;
+		}
+		.maskFull {
+			width : 100%;
+			height : 100%;
+			display: none;
+            background-color: rgba(0, 0, 0, 0.85);
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index:999;
+		}
+		.shareButton {
+			padding: 2px;
+		}
+		.title {
+			font-size: 1em;
+			padding: 0px;
+			margin:0px;
+			margin-top: 10px;
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+		.container>.content{
+			margin: 0px 1px;
+		}
+		.center {
+			margin:0px auto;
+			text-align: center;
+		}
+		.left {
+			padding: 30px 0px;
+			width : 48%;
+			float: left;
+		}
+		.right {
+			padding: 30px 0px;
+			width : 48%;
+			height: 100px;
+			float: right;
+		}
+		.downloadButton {
+			width : 100%;
+			max-width: 400px;
+			margin-bottom: 10px;
+		}
+		.seperator {
+			height:1px;
+			width:100%;
+			background:#a67471;
+			overflow:hidden;
+			margin: 30px 0px;
+		}
+		.downloadLink {
+			color:#a67471;
+			font-weight: bold;
+			padding: 10px;
+		}
+		.normalLink {
+			color:#a67471;
+		}
+		.footer>p {
+			margin: 5px;
+		}
+		.footer {
+			padding-bottom: 100px;
+		}
+		#imgMessage {
+			position: absolute;
+			top: 0px;
+			right : 0px;
+		}
+        .btnClose {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 10px;
+        }
+	</style>
+    <script type="text/javascript" src="res/WeixinApi.js"></script>
+</head>
+<body style="padding:0; margin: 0; background: #fffbea;">
+<canvas id="gameCanvas" width="552" height="720" class="center"></canvas>
+<div class="container">
+	<div>
+		<p style='color:#B23AEE;font-weight:bold;'>欢迎关注 街机小游戏 ！ 微信公众号: &nbsp;&nbsp;&nbsp;weixin_miniplay </p>
+		<p class="content"><strong>怎么玩？</strong>点击相邻的两个相同数字的方块，方块便会合并并且数字+1，直到合并到10或更高为止。</p>
+	</div>
+	
+</div>
+<div class="maskBanner" id="share">
+    <div class="center" style="width:240px;">
+        <p class="title" style="color:#666" >分享到:</p>
+    </div>
+    <div class="center share">
+        <img src="res/btn_close.png" class="btnClose" onclick=hideWidget()>
+        <div class="bshare-custom icon-medium-plus">
+            <a title="分享到Facebook" class="bshare-facebook"></a>
+            <a title="分享到Twitter" class="bshare-twitter"></a>
+            <a title="分享到Google+" class="bshare-gplus" href="javascript:void(0);"></a>
+            <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="game.min.js"></script>
+ <script type="text/javascript">
+
+	function openURL(url) {
+        window.open(url);
+	}
+	function share(msg) {
+        //if (typeof WeixinJSBridge == "undefined") {
+        //    showWidget(msg);
+        //} else {
+            showImg("res/weixin_share.png");
+        //}
+	}
+
+    function downLoad(type){
+		//if (typeof WeixinJSBridge == "undefined") {
+		//	showWidget(msg);
+		//} else {
+			showImg("res/weixin_share.png");
+		//}
+
+    }
+
+	function showImg(path) {
+		var ele = document.getElementById("imgMessage");
+		ele.setAttribute("src", path);
+		var ele = document.getElementById("divMessage");
+		ele.setAttribute("style", "display:block;");
+	}
+	function hideImg() {
+		var ele = document.getElementById("divMessage");
+		ele.setAttribute("style", "display:none;");
+		var ele = document.getElementById("share");
+		ele.setAttribute("style", "display:none;");
+	}
+    function showWidget(msg) {
+        bShare.addEntry({
+            title: "Just Get 10",
+            url: location.href,
+            summary: msg,
+            pic: "./"
+        });
+		var ele = document.getElementById("divMessage");
+		ele.setAttribute("style", "display:block;");
+        var ele = document.getElementById("share");
+        ele.setAttribute("style", "display:block;");
+//        summary: "New challenge from the creator of 2048! Only 10% people can win this game! Play for free!",
+    }
+    function hideWidget() {
+		var ele = document.getElementById("divMessage");
+		ele.setAttribute("style", "display:none;");
+        var ele = document.getElementById("share");
+        ele.setAttribute("style", "display:none;");
+    }
+	window.onload = function(){
+		setTimeout(scrollTo,0,0,0);
+	};
+    WeixinApi.ready(function(Api) {
+        
+    });
+
+</script>
+
+</body>
+</html>

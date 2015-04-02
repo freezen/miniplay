@@ -1,0 +1,18 @@
+.slider {
+  margin-bottom: 0;
+}
+.slider img {
+  width: 100%;
+  height: 150px;
+}
+.content-padded {
+  margin: 30px 15px 15px;
+}
+.content iframe{
+	width:100%;
+	height:100%;
+}
+.games-list img{ 
+	width: 64px;
+	height: 64px;
+}

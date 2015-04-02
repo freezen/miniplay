@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";       
+        #ti{
+            margin-top: 50px;
+        }      
+        
+     .progress {
+         height: 35px;
+         overflow: hidden;
+         margin-top: 15px;
+         position: relative;
+         z-index: 10; }
+     .progress div {
+         width: 70px;
+         height: 70px;
+         border-radius: 40px;
+         text-align: center;
+         line-height: 40px;
+         font-size: 20px;
+         margin: 0px auto;
+         background-color: #fff; }
+
+     .progress div span {
+         font-size: 25px; }
+     #total{
+         font-size: 20px;
+     }
+     .question {
+     	width:80%;
+         font-size: 18px;
+         background-color: #fff;
+         padding: 10px;
+         border-radius: 15px;
+         margin: 0px auto;
+         margin-top: -5px; 
+         text-align:left;
+     }
+     .progress div, .question{
+     border: 5px solid #7cac0a;
+     }

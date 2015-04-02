@@ -1,0 +1,197 @@
+﻿var player = 
+{
+	x:200,
+	y:625,
+	birth_x:200,
+	birth_y:625,
+	length_x:76,
+	length_y:76,
+	K_UP:38,
+	K_XX:32,
+	K_DOWN:40,
+	K_LEFT:37,
+	K_RIGHT:39,
+	life:5,
+	score:0,
+	fireOn:0,
+	fire:3,
+	fire1Reduce:0,
+	fire1Start:0,
+	direction:0,//方向：0：无，1：左，2：右
+	bomb:1,
+	img_player00:"player00",
+	img_player01:"player01",
+	player_left_10:"player_left_10",
+	player_left_11:"player_left_11",
+	player_right_10:"player_right_10",
+	player_right_11:"player_right_11",
+	player_shadow:"player_shadow",
+	noDieImg:"noDieImg",
+	noDie:0,
+	mayDie:0,
+
+
+	draw:function()
+	{
+		var img00 = document.getElementById(this.img_player00);
+		var img01 = document.getElementById(this.img_player01);
+		var imgl10 = document.getElementById(this.player_left_10);
+		var imgl11 = document.getElementById(this.player_left_11);
+		var imgr10 = document.getElementById(this.player_right_10);
+		var imgr11 = document.getElementById(this.player_right_11);
+		var img_shadow = document.getElementById(this.player_shadow);
+		var img_noDie = document.getElementById(this.noDieImg);
+
+		if(this.noDie==1){g.drawImage(img_noDie, this.birth_x-26, this.birth_y-26,128, 128) ;}
+		//绘制阴影
+		g.drawImage(img_shadow, this.birth_x-10, this.birth_y+20, this.length_x, this.length_y) ;
+		//绘制飞机
+		if(this.fireOn==1){
+			if(this.fire==3){
+				g.drawImage(fire1, this.birth_x+10,this.fire1Start, 54, this.birth_y+60-this.fire1Reduce) ;
+				m_fire3.play();
+			}
+			else if(this.fire==1){
+				addBullet1();
+			}
+			else if(this.fire==2){
+			}
+		}
+		else {
+			m_fire3.pause();
+		}
+		if(this.direction==0){
+			if(time%2==0){
+				g.drawImage(img00, this.birth_x, this.birth_y , this.length_x, this.length_y) ;
+			}
+			else {
+				g.drawImage(img01, this.birth_x, this.birth_y , this.length_x, this.length_y) ;
+			}
+		}
+		else if(this.direction==1){
+			if(time%2==0){
+				g.drawImage(imgl10, this.birth_x, this.birth_y , this.length_x, this.length_y) ;
+			}
+			else {
+				g.drawImage(imgl11, this.birth_x, this.birth_y , this.length_x, this.length_y) ;
+			}
+		}
+		else if(this.direction==2){
+			if(time%2==0){
+				g.drawImage(imgr10, this.birth_x, this.birth_y , this.length_x, this.length_y) ;
+			}
+			else {
+				g.drawImage(imgr11, this.birth_x, this.birth_y , this.length_x, this.length_y) ;
+			}
+		}
+	},
+	
+	addBullet1:function()
+	{
+		var bullet1 = new Bullet1(this.birth_x + 20, this.birth_y - 6);
+		bullets.push(bullet1);
+	},
+		
+	keymove:function()
+	{
+		var v = 8;
+		if(key[this.K_UP]){
+			this.direction=0;
+			this.birth_y -= v;
+			if(this.birth_y < 0) {this.birth_y = 0;}
+		}
+		
+		else if(key[this.K_DOWN]){
+			this.direction=0;
+			this.birth_y += v;
+			if(this.birth_y > 625) {this.birth_y = 625;}
+		}
+		
+		else if(key[this.K_LEFT]){
+			this.direction=1;
+			this.birth_x -= v;
+			if(this.birth_x < -36) {this.birth_x = -36;}
+		}
+		
+		else if(key[this.K_RIGHT]){
+			this.direction=2;
+			this.birth_x += v;
+			if(this.birth_x > 490) {this.birth_x = 490;}
+		}
+		else {
+			this.direction=0;
+		}
+
+		if(key[this.K_XX]){
+			this.fireOn=1;
+		}
+		else {
+			this.fireOn=0;
+		}
+		
+	},
+	
+	update:function()
+	{
+		this.fire1Reduce=0;
+		this.fire1Start=0;
+		this.keymove();
+		/*
+		if(this.time > 4) 
+		{
+			this.time = 0;
+			this.addBullet1();
+		}
+		*/
+		//this.addFire();
+		var i;
+		for(i = 0; i < enemy_bullets.length;i ++)
+		{
+			var ex = enemy_bullets[i].x; 
+			var ey = enemy_bullets[i].y;
+			if((this.noDie==0)&&(  ( ( ((ex+20)>(this.birth_x+10))&&((ex+20)<(this.birth_x+66)) ) || ( ((ex+24)>(this.birth_x+10))&&((ex+24)<(this.birth_x+66)) ) )  && ( ( ((ey+20)>(this.birth_y+10))&&((ey+20)<(this.birth_y+66)) ) || ( ((ey+24)>(this.birth_y+10))&&((ey+24)<(this.birth_y+66)) )  ) ))
+			{
+				//this.life--;
+				music_i=1;
+				this.noDie=1;
+				this.mayDie=time;
+				addBombs(this.birth_x,this.birth_y,1,1);
+			}
+		}
+		if ((time-this.mayDie)==70)
+		{
+			this.noDie=0;
+			this.mayDie=0;
+		}
+		if ((this.life==0)&&(this.noDie==0)){
+			alert("You Lose!!!");
+			location.href=window.location;
+		}
+		
+	}
+	
+}
+
+
+function Bullet1(x, y)
+{
+	this.speed = 13;
+	this.width = 32;
+	this.isDie = false;
+}
+
+Bullet1.prototype.update = function()
+{
+	
+};
+
+Bullet1.prototype.draw = function()
+{
+	var img = document.getElementById("bullet1");
+	g.drawImage(img, 0, 0, 57, 57, x, y, 32, 32) ;
+};
+
+
+
+
+

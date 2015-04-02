@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>activeLanguages</key>
+	<array>
+		<string>en</string>
+		<string>zh-Hans</string>
+	</array>
+	<key>fileType</key>
+	<string>SpriteBuilderTranslations</string>
+	<key>fileVersion</key>
+	<integer>1</integer>
+	<key>translations</key>
+	<array>
+		<dict>
+			<key>key</key>
+			<string>随便一个按钮</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>what ever button</string>
+				<key>zh-Hans</key>
+				<string>随便一个按钮</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>YEAH!</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>YEAH!</string>
+				<key>zh-Hans</key>
+				<string>酷!</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>HI</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>HI</string>
+				<key>zh-Hans</key>
+				<string>你好</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>TRY TO GET</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>TRY TO GET</string>
+				<key>zh-Hans</key>
+				<string>試著合出來</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>HELLO</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>HI</string>
+				<key>zh-Hans</key>
+				<string>你好</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>TAP ON </string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>TAP ON </string>
+				<key>zh-Hans</key>
+				<string>点击</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>THEY POP UP</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>THEY POP UP</string>
+				<key>zh-Hans</key>
+				<string>他們浮了出來</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>CHOOSE A POSITION TO COMBINE</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>CHOOSE A POSITION TO COMBINE</string>
+				<key>zh-Hans</key>
+				<string>选择一个位置合成</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>TAP THESE</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>TAP</string>
+				<key>zh-Hans</key>
+				<string>点击</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>THEY WILL COMBINE</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>THEY WILL COMBINE</string>
+				<key>zh-Hans</key>
+				<string>方塊會在</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>IN THE POSITION YOU TAP</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>IN THE POSITION YOU TAP</string>
+				<key>zh-Hans</key>
+				<string>你再次點擊的位置合成</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>YOU GET</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>YOU GET</string>
+				<key>zh-Hans</key>
+				<string>你得到了</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>IS IT SIMPLE?</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>IS IT SIMPLE?</string>
+				<key>zh-Hans</key>
+				<string>這很簡單吧</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>YES!</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>YES!</string>
+				<key>zh-Hans</key>
+				<string>是的</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>TAP</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>TAP LINKED</string>
+				<key>zh-Hans</key>
+				<string>點擊相連的</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>TAP ANY</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>TAP LINKED</string>
+				<key>zh-Hans</key>
+				<string>點擊相連的</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>GOOD LUCK</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>GOOD LUCK</string>
+				<key>zh-Hans</key>
+				<string>好运</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>COMBINE THE TILES TO GET 10</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>COMBINE THE TILES TO GET 10</string>
+				<key>zh-Hans</key>
+				<string>合併方塊得到數字10</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>RESUME</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>RESUME</string>
+				<key>zh-Hans</key>
+				<string>继续游戏</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>SHARE</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>SHARE</string>
+				<key>zh-Hans</key>
+				<string>分享</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>CHOOSE A POSITION </string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>CHOOSE A POSITION </string>
+				<key>zh-Hans</key>
+				<string>選擇一個位置</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>TO COMBINE</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>TO COMBINE</string>
+				<key>zh-Hans</key>
+				<string>合併它們</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>GROW TO</string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>GROW TO</string>
+				<key>zh-Hans</key>
+				<string>合併成了</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>I don't know where I am going,
+          but I am on my way. </string>
+			<key>translations</key>
+			<dict>
+				<key>en</key>
+				<string>I don't know where I am going,
+          but I am on my way. </string>
+				<key>zh-Hans</key>
+				<string>我不知將去何方，
+   但我已在路上。</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

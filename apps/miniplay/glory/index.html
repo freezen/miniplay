@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://szhong.4399.com/4399swf/upload_swf/ftp14/ck/20141211/1/game.htm -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <title>妹纸，你到底有多诱人？</title> 
+  <link rel="stylesheet" href="./css/animation.css"> 
+  <link rel="stylesheet" href="./css/common.css"> 
+  <link rel="stylesheet" href="./css/jump.css"> 
+  <script src="../js/insertAds.js"></script>
+  <style>       
+body{
+            background: url("bg.png") repeat ;
+        }
+      .t-btn1{
+        color: black;
+        background: url("titlepanel.png") no-repeat;
+        background-position: center center;
+        background-size: contain;
+        padding-top:15px;
+        padding-bottom:15px;
+        padding-left:40px;
+        padding-right:40px;
+        text-align: center;
+        margin:0 auto;
+    }
+       .t-s::after{
+            position:absolute;
+            right:5px;
+            top:0;
+            padding:4px;    
+            background:rgba(255,255,255,0);
+            content:url("select.png");
+            display:none;
+            opacity:0;
+            -webkit-transition:opacity 0.3s ease;
+        }
+        
+		.animation-breath{
+			-webkit-animation:breath 1s ease-in-out infinite;
+	    }
+	    @-webkit-keyframes breath {
+	            0% { opacity: 0.4; }                          
+	            50%  { opacity: 1; }                       
+	            100%   { opacity: 0.4; }
+	    }
+	    .head-help{
+	    	position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+	        z-index:100;
+	        display:none;
+        }
+    </style> 
+  <script src="./common.js">
+	</script>
+ <style type="text/css">
+#player-ad,#p-bg-l,#p-bg-r {display:none!important;display:none}</style>
+</head> 
+ <body class=""> 
+-->  <div class="main" id="main"> 
+   <div class="title-area">
+    <div class="head" id="btimg">
+     <img id="head-img" src="">
+    </div>
+    <div class="lt-w" id="toptit">
+     <div id="dbt" class="t-btn1">妹纸，你到底有多诱人？</div>
+    </div>
+   </div>
+   <div class="start-area" id="start" style="display: none;">
+    <div class="auto-div start-auto">
+     <div class="div-inner">
+      <div class="circle"></div>
+      <div class="home-desc" id="home-desc"></div>
+     </div>
+    </div>
+    <div class="start-btn" onclick="startTest();">
+      开始测试 
+    </div>
+   </div>
+   <div id="wenti" style="display: block;">
+    <div class="progress">
+     <div>
+      <span id="current">1</span>
+      <span id="total">/20</span>
+     </div>
+    </div>
+    <div class="question question-only" id="question">1、拍个人写真时，你最喜欢以下哪种服装？</div>
+    <div id="ti" style="display:block;">
+     <div id="ti0" class="t-c" style="display: none;">
+      <img id="picti" src="" width="90%">
+     </div>
+     <div id="selections"><div id="tia" vel="a" num="a." class="t-s" onclick="select(this);">波西米亚裙子</div><div id="tib" vel="b" num="b." class="t-s" onclick="select(this);">制服</div><div id="tic" vel="c" num="c." class="t-s" onclick="select(this);">个性裙子</div></div>
+  
+    </div>
+   </div>
+   <div class="result" id="result">
+    <div class="auto-div">
+     <div class="div-inner">
+      <div class="circle"></div>
+      <div class="result-title" id="result-title"></div>
+      <div class="result-desc" id="result-desc"></div>
+     </div>
+    </div>
+	     
+   </div>
+  </div>
+  <div class="result-bnt" id="result-bnt">
+   
+  </div>
+  <script type="text/javascript">	
+  var dbt='妹纸，你到底有多诱人？';	
+
+	// 问题
+	var xlist = eval([{"img":"","question":"\u62cd\u4e2a\u4eba\u5199\u771f\u65f6\uff0c\u4f60\u6700\u559c\u6b22\u4ee5\u4e0b\u54ea\u79cd\u670d\u88c5\uff1f","answer":{"a":{"title":"\u6ce2\u897f\u7c73\u4e9a\u88d9\u5b50","next":"2"},"b":{"title":"\u5236\u670d","next":"6"},"c":{"title":"\u4e2a\u6027\u88d9\u5b50","next":"4"}}},{"img":"","question":"\u62cd\u68da\u5185\u666f\u5199\u771f\u65f6\uff0c\u4f60\u559c\u6b22\u54ea\u79cd\u5e03\u666f\uff1f","answer":{"a":{"title":"\u72c2\u91ce","next":"7"},"b":{"title":"\u6587\u827a","next":"3"},"c":{"title":"\u53e6\u7c7b","next":"5"}}},{"img":"","question":"\u82e5\u662f\u62cd\u5199\u771f\u5916\u666f\uff0c\u4f60\u6700\u60f3\u9009\u62e9\u4ee5\u4e0b\u54ea\u4e2a\u666f\u70b9\uff1f","answer":{"a":{"title":"\u6d77\u8fb9","next":"8"},"b":{"title":"\u8352\u539f","next":"9"},"c":{"title":"\u8349\u5730","next":"12"}}},{"img":"","question":"\u82e5\u4ece\u5929\u6c14\u6216\u6c14\u8c61\u53d8\u5316\u6765\u9009\uff0c\u4f60\u6700\u60f3\u5728\u4ec0\u4e48\u65f6\u5019\u62cd\uff1f","answer":{"a":{"title":"\u9634\u5929","next":"7"},"b":{"title":"\u6674\u5929","next":"3"},"c":{"title":"\u65e0\u6240\u8c13","next":"11"}}},{"img":"","question":"\u62cd\u7167\u65f6\u4f60\u6700\u60f3\u6444\u5f71\u5e08\u901a\u8fc7\u62cd\u6444\u6280\u5de7\u548c\u89d2\u5ea6\uff0c\u4fee\u9970\u4f60\u8eab\u4f53\u7684\u54ea\u90e8\u5206\uff1f","answer":{"a":{"title":"\u8170\u90e8","next":"8"},"b":{"title":"\u8138\u90e8","next":"13"},"c":{"title":"\u817f\u90e8","next":"12"}}},{"img":"","question":"\u5982\u679c\u662f\u62cd\u5a5a\u7eb1\u7167\uff0c\u4f60\u4f1a\u9009\u62e9\u4ee5\u4e0b\u54ea\u6b3e\u5a5a\u7eb1\u5462\uff1f","answer":{"a":{"title":"\u7d27\u8eab\u5a5a\u7eb1","next":"10"},"b":{"title":"\u84ec\u84ec\u88d9","next":"3"},"c":{"title":"\u5927\u9732\u80cc","next":"5"}}},{"img":"","question":"\u82e5\u662f\u80fd\u65c5\u884c\u62cd\u5a5a\u7eb1\u7167\uff0c\u4f60\u6700\u60f3\u53bb\u54ea\u62cd\uff1f","answer":{"a":{"title":"\u9a6c\u5c14\u4ee3\u592b","next":"9"},"b":{"title":"\u6cf0\u56fd","next":"14"},"c":{"title":"\u6cd5\u56fd","next":"12"}}},{"img":"","question":"\u4f60\u4f1a\u8ffd\u7740\u770b\u8fd8\u5728\u8fde\u8f7d\u7684\u7535\u89c6\u5267\u5417\uff1f","answer":{"a":{"title":"\u662f\u7684","next":"16"},"b":{"title":"\u4e0d\u4f1a","next":"15"},"c":{"title":"\u8fd8\u597d","next":"19"}}},{"img":"","question":"\u4f60\u89c9\u5f97\u8d8a\u957f\u5927\uff0c\u8d8a\u600e\u6837\uff1a","answer":{"a":{"title":"\u8d8a\u5b64\u5355","next":"15"},"b":{"title":"\u8d8a\u591a\u70e6\u607c","next":"18"},"c":{"title":"\u8d8a\u591a\u8d23\u4efb","next":"20"}}},{"img":"","question":"\u670b\u53cb\u95ee\u4f60\u501f\u591a\u5c11\u94b1\uff0c\u4f60\u4f1a\u72b9\u8c6b\uff1f","answer":{"a":{"title":"\u4e00\u5343\u4ee5\u4e0a","next":"8"},"b":{"title":"\u4e94\u767e\u4ee5\u4e0a","next":"5"},"c":{"title":"\u4e94\u5343\u4ee5\u4e0a","next":"13"}}},{"img":"","question":"\u4f60\u4e00\u5fc3\u591a\u7528\u7684\u80fd\u529b\u5f88\u5f3a\u5417\uff1f","answer":{"a":{"title":"\u662f\u7684","next":"14"},"b":{"title":"\u4e0d\u662f","next":"9"},"c":{"title":"\u8fd8\u597d","next":"7"}}},{"img":"","question":"\u548c\u964c\u751f\u4eba\u8bf4\u8bdd\uff0c\u4f60\u4f1a\u5148\u6ce8\u610f\u5bf9\u65b9\u7684\uff1a","answer":{"a":{"title":"\u773c\u775b","next":"20"},"b":{"title":"\u7a7f\u7740","next":"16"},"c":{"title":"\u8868\u60c5","next":"15"}}},{"img":"","question":"\u770b\u5230\u6bd4\u81ea\u5df1\u5e74\u8f7b\u7684\u4eba\uff0c\u4f60\u4f1a\u611f\u53f9\u81ea\u5df1\u8001\u4e86\u5417\uff1f","answer":{"a":{"title":"\u662f\u7684","next":"17"},"b":{"title":"\u4e0d\u662f","next":"16"},"c":{"title":"\u8fd8\u597d","next":"19"}}},{"img":"","question":"\u548c\u670b\u53cb\u805a\u9910\uff0c\u4f60\u66f4\u613f\u610f\u9009\u62e9\u4e0b\u9762\u54ea\u79cd\uff1f","answer":{"a":{"title":"\u91ce\u5916\u70e7\u70e4","next":"9"},"b":{"title":"\u5927\u6392\u6863","next":"20"},"c":{"title":"\u5bb6\u5ead\u805a\u4f1a","next":"18"}}},{"img":"","question":"\u8fc7\u751f\u65e5\u7684\u65f6\u5019\uff0c\u751f\u65e5\u86cb\u7cd5\u7684\u7b2c\u4e00\u5757\u4f60\u4f1a\u5148\u7ed9\u8c01\uff1f","answer":{"a":{"title":"\u5bff\u661f","next":"D"},"b":{"title":"\u957f\u8f88","next":"C"},"c":{"title":"\u597d\u53cb","next":"B"}}},{"img":"","question":"\u665a\u4e0a\u7761\u89c9\u7684\u65f6\u5019\uff0c\u4f60\u4e00\u822c\u662f\uff1a","answer":{"a":{"title":"\u73a9\u4e00\u4f1a\u513f\u624b\u673a","next":"D"},"b":{"title":"\u770b\u4e00\u4f1a\u513f\u4e66","next":"C"},"c":{"title":"\u8eba\u7740\u80e1\u601d\u4e71\u60f3","next":"E"}}},{"img":"","question":"\u4e0b\u66b4\u96e8\uff0c\u673a\u573a\u79ef\u6c34\u4e25\u91cd\uff0c\u65c5\u5ba2\u6ede\u7559\u673a\u573a\uff0c\u597d\u591a\u5fd7\u613f\u8005\u90fd\u81ea\u613f\u53bb\u63a5\u9001\u65c5\u5ba2\uff0c\u4f60\u4f1a\uff1a","answer":{"a":{"title":"\u81ea\u5df1\u4e5f\u4f1a\u53bb","next":"F"},"b":{"title":"\u6ca1\u65f6\u95f4\u7ba1\u8fd9\u4e9b\u4e8b","next":"E"},"c":{"title":"\u7ed9\u5fd7\u613f\u8005\u9001\u70b9\u77ff\u6cc9\u6c34","next":"19"}}},{"img":"","question":"\u5982\u679c\u4f60\u4e2d\u4e86\u5927\u5956\uff0c\u4f60\u4f1a\uff1a","answer":{"a":{"title":"\u5f88\u5f00\u5fc3","next":"A"},"b":{"title":"\u4f1a\u62c5\u5fc3\u522b\u4eba\u6765\u627e\u81ea\u5df1\u8981\u94b1","next":"20"},"c":{"title":"\u7acb\u523b\u8ba1\u5212\u600e\u4e48\u7528\u94b1","next":"B"}}},{"img":"","question":"\u5927\u5bb6\u4e00\u8d77\u5403\u996d\u7684\u65f6\u5019\uff0c\u4f60\u4f1a\u70b9\u4ec0\u4e48\u83dc\u5462\uff1f","answer":{"a":{"title":"\u6ce1\u83dc","next":"F"},"b":{"title":"\u7279\u8272\u83dc","next":"D"},"c":{"title":"\u6c64\u83dc","next":"E"}}},{"img":"","question":"\u540c\u4e8b\u8bb2\u7684\u6050\u6016\u6545\u4e8b\uff0c\u4f60\u4f1a:","answer":{"a":{"title":"\u542c\u542c\u65e0\u59a8","next":"C"},"b":{"title":"\u4e0d\u7231\u542c\u8fd9\u4e9b\u4e1c\u897f","next":"B"},"c":{"title":"\u8868\u793a\u81ea\u5df1\u5f88\u5bb3\u6015","next":"A"}}}]);
+	for(var i=0; i<xlist.length; i++){
+		if(!(xlist[i].img.indexOf("http://") > -1))
+			xlist[i].img = 'http://flash1.7k7k.com/h5/2014/' +　xlist[i].img;
+	}
+    //fontstyle
+    var fontstyle = eval();
+    var ylist = eval([{"threshold":"A","title":"\u8bf1\u60d1\u5f02\u6027\u7684\u672c\u80fd\u7279\u5f3a","desc":"\u4f60\u5929\u751f\u4e50\u89c2\u70ed\u60c5\uff0c\u559c\u6b22\u7ed3\u4ea4\u670b\u53cb\uff0c\u548c\u670b\u53cb\u4e00\u8d77\u73a9\u4e50\uff0c\u5f00\u6717\u7684\u4e2a\u6027\u8ba9\u4f60\u4e0d\u4ec5\u62e5\u6709\u5f88\u597d\u7684\u540c\u6027\u7f18\uff0c\u4e5f\u5f88\u53d7\u5f02\u6027\u670b\u53cb\u7684\u6b22\u8fce\uff0c\u53ea\u662f\u8fd9\u6837\u7684\u6027\u683c\u6709\u70b9\u5927\u5927\u54a7\u54a7\uff0c\u8fc7\u4e8e\u5766\u8bda\uff0c\u4e0d\u5927\u6ce8\u610f\u7ec6\u8282\uff0c\u4f1a\u5f15\u6765\u4e0d\u5fc5\u8981\u7684\u8bef\u4f1a\uff0c\u7279\u522b\u662f\u5f02\u6027\u4e4b\u95f4\uff0c\u4fdd\u6301\u4e00\u5b9a\u7684\u8ddd\u79bb\u4f1a\u8ba9\u4f60\u907f\u514d\u4e0d\u5fc5\u8981\u7684\u9ebb\u70e6\u3002\u53e6\u5916\uff0c\u4f60\u4e5f\u662f\u6781\u5177\u6d6a\u6f2b\u6c14\u8d28\u7684\uff0c\u800c\u4e14\u672c\u8eab\u8fd8\u5e26\u70b9\u8ff7\u79bb\uff0c\u6216\u8005\u8bf4\u8ff7\u7cca\u5427\u3002\u7537\u751f\u5bf9\u4e8e\u8fd9\u79cd\u8ff7\u7cca\u6216\u8005\u8ff7\u79bb\u90fd\u96be\u4ee5\u6297\u62d2\uff0c\u56e0\u4e3a\u4f60\u592a\u67d4\u60c5\u4f3c\u6c34\uff0c\u603b\u662f\u4e00\u526f\u88ab\u5bb3\u8005\u7684\u65e0\u8f9c\u6837\u3002\u5f02\u6027\u90fd\u662f\u5927\u7537\u4eba\u4e3b\u4e49\u4f5c\u795f\uff0c\u6240\u4ee5\u5bf9\u4e8e\u5f31\u8005\u822c\u7684\u5973\u6027\u90fd\u65e0\u6cd5\u62d2\u7edd\u3002\u7537\u4eba\u5bf9\u4e8e\u90a3\u4e9b\u6211\u89c1\u72b9\u601c\u7684\u666f\u8c61\uff0c\u901a\u5e38\u90fd\u4fdd\u62a4\u6b32\u7206\u53d1\uff01","sharetitle":""},{"threshold":"B","title":"\u8bf1\u60d1\u5f02\u6027\u7684\u672c\u80fd\u8d85\u5f3a","desc":"\u90fd\u8bf4\u4f5b\u9760\u91d1\u88c5\uff0c\u4eba\u9760\u8863\u88f3\uff0c\u5728\u8fd9\u4e2a\u89c6\u89c9\u7b2c\u4e00\u7684\u5e74\u4ee3\uff0c\u8981\u60f3\u83b7\u5f97\u66f4\u591a\u7684\u5173\u6ce8\uff0c\u4eae\u4e3d\u82f1\u4fca\u7684\u5916\u8868\u80fd\u8ba9\u4f60\u7b2c\u4e00\u65f6\u95f4\u8d62\u5f97\u66f4\u591a\u7684\u4eba\u7f18\u3002\u5929\u751f\u4f1a\u6253\u626e\u7684\u4f60\uff0c\u603b\u662f\u5149\u9c9c\u4eae\u4e3d\u5730\u51fa\u73b0\u5728\u5927\u4f17\u9762\u524d\uff0c\u600e\u4e48\u56de\u5c11\u6709\u76ee\u5149\u7684\u5173\u6ce8\u5462\u3002\u4f60\u8fd8\u662f\u4e00\u4e2a\u5bb3\u6015\u5bc2\u5bde\u7684\u4eba\uff0c\u4e3a\u4e86\u9a71\u8d76\u5bc2\u5bde\uff0c\u4f60\u4f1a\u4e3b\u52a8\u53bb\u627e\u670b\u53cb\u804a\u5929\uff0c\u8fd9\u6837\uff0c\u4f60\u5f97\u8eab\u8fb9\u81ea\u7136\u4f1a\u5c11\u4e0d\u4e86\u540c\u6027\u548c\u5f02\u6027\u4e86","sharetitle":""},{"threshold":"C","title":"\u8bf1\u60d1\u5f02\u6027\u7684\u672c\u80fd\u8fd8\u4e0d\u8d56","desc":"\u4f60\u662f\u5f88\u6027\u611f\uff0c\u800c\u4e14\u4f60\u7684\u6027\u611f\u662f\u4e0d\u7531\u81ea\u4e3b\u5c31\u6563\u53d1\u51fa\u6765\u7684\u3002\u4f46\u662f\uff0c\u4f60\u7684\u6027\u611f\u6216\u8bb8\u4f1a\u906d\u5230\u540c\u6027\u7684\u5ac9\u5992\uff0c\u4f46\u5728\u5f02\u6027\u770b\u8d77\u6765\u7279\u522b\u7684\u6709\u9b45\u529b\uff0c\u8fd8\u6709\uff0c\u4f60\u5728\u4e0e\u5f02\u6027\u4ea4\u5f80\u7684\u65f6\u5019\u61c2\u5f97\u4fdd\u6301\u4e00\u5b9a\u7684\u8ddd\u79bb\uff0c\u6709\u90a3\u4e48\u4e00\u70b9\u795e\u79d8\u611f\uff0c\u56e0\u6b64\u5f88\u5bb9\u6613\u5f15\u8d77\u5f02\u6027\u7684\u597d\u5947\u5fc3\uff0c\u4e5f\u5c31\u66f4\u6709\u5f02\u6027\u7684\u5438\u5f15\u529b\u4e86\u3002\u800c\u4f60\u534a\u63a8\u534a\u5c31\uff0c\u6b32\u62d2\u8fd8\u4f11\u7684\u611f\u89c9\u8d8a\u53d1\u5730\u80fd\u5f15\u8d77\u5f02\u6027\u5bf9\u4f60\u66f4\u52a0\u60f3\u9760\u8fd1","sharetitle":""},{"threshold":"D","title":"\u8bf1\u60d1\u5f02\u6027\u7684\u672c\u80fd\u8fd8\u7b97\u53ef\u4ee5","desc":"\u4f60\u5728\u5bf9\u5f85\u5f02\u6027\u5173\u7cfb\u4e0a\u8868\u73b0\u5f97\u8c28\u614e\u7ec6\u5fc3\uff0c\u6240\u4ee5\u8ddf\u4f60\u505a\u670b\u53cb\u5f88\u653e\u5fc3\uff0c\u8d34\u5fc3\u7684\u4f60\u5f88\u591a\u65f6\u5019\u90fd\u4f1a\u4e3a\u522b\u4eba\u8003\u8651\uff0c\u7167\u987e\u522b\u4eba\u7684\u60f3\u6cd5\uff0c\u5584\u89e3\u4eba\u610f\u7684\u4f60\u4f1a\u5728\u63a5\u89e6\u65f6\u95f4\u957f\u4e4b\u540e\u4f1a\u5f97\u5230\u5f02\u6027\u7279\u522b\u7684\u9752\u7750\u3002 \u4f60\u80fd\u591f\u5438\u5f15\u5f02\u6027\u7684\u6b66\u5668\uff0c\u5e76\u4e0d\u5728\u4f60\u7684\u5916\u8868\uff0c\u800c\u662f\u4f60\u7279\u7acb\u72ec\u884c\u7684\u4e2a\u6027\u3002\u65e0\u8bba\u662f\u7a7f\u8863\u6253\u626e\uff0c\u8fd8\u662f\u8a00\u884c\u4e3e\u6b62\uff0c\u90fd\u65e0\u6bd4\u6563\u53d1\u51fa\u4f60\u7279\u6709\u7684\u72ec\u6811\u4e00\u5e1c\u7684\u98ce\u683c\uff0c\u800c\u4e14\u4f60\u4e0d\u662f\u4f20\u7edf\u7684\u4e3b\u6d41\uff0c\u4e5f\u4e0d\u662f\u4f20\u7edf\u7684\u975e\u4e3b\u6d41\uff0c\u800c\u4e14\u4ecb\u4e4e\u4e24\u8005\u4e4b\u95f4\uff0c\u4e0d\u4f1a\u843d\u540e\uff0c\u6c38\u4e16\u957f\u5b58\u7684\u98ce\u683c\u3002\u7537\u4eba\u5c31\u662f\u559c\u6b22\u8fd9\u6837\u7684\u6311\u6218\uff0c\u603b\u662f\u80fd\u591f\u5e26\u7ed9\u522b\u4eba\u65b0\u9c9c\u611f\u548c\u523a\u6fc0","sharetitle":""},{"threshold":"E","title":"\u8bf1\u60d1\u5f02\u6027\u7684\u672c\u80fd\u592a\u5f3a\u4e86","desc":"\u4f60\u672c\u8eab\u662f\u4e2a\u611f\u60c5\u4e30\u5bcc\uff0c\u7231\u5fc3\u591a\u591a\u7684\u4eba\uff0c\u65e0\u8bba\u7537\u5973\u8001\u5c11\uff0c\u4f60\u90fd\u613f\u610f\u5e2e\u5fd9\uff0c\u88ab\u5e2e\u52a9\u7684\u4eba\u5e38\u5e38\u51fa\u4e8e\u611f\u52a8\u800c\u4e0e\u4f60\u7ed3\u4ea4\u670b\u53cb\u3002\u56e0\u4e3a\u4f60\u672c\u8eab\u5c31\u5177\u6027\u611f\u548c\u53ef\u7231\u7684\u81f4\u547d\u7279\u70b9\uff0c\u4f60\u4e3e\u624b\u6295\u8db3\u95f4\u90fd\u5145\u6ee1\u8bf1\u60d1\u3002\u800c\u4e14\u4f60\u795e\u79d8\u7684\u6c14\u8d28\u8ba9\u5f02\u6027\u770b\u5f97\u5165\u795e\uff0c\u4f60\u4e5f\u662f\u900f\u9732\u7740\u4e00\u80a1\u51b7\u8273\u7684\u6c14\u8d28\uff0c\u5176\u5b9e\u90a3\u662f\u4e00\u79cd\u8ba9\u7537\u4eba\u6b32\u7f62\u4e0d\u80fd\u7684\u98ce\u9a9a\u3002\u6240\u4ee5\u5f88\u591a\u5f02\u6027\u4f1a\u4e0d\u7531\u81ea\u4e3b\u5730\u9760\u8fd1\u4f60\uff0c\u7136\u540e\u4f60\u6b32\u62d2\u8fd8\u8fce\uff0c\u8ba9\u5f02\u6027\u80fd\u4e0d\u5230\u53c8\u5ff5\u5ff5\u4e0d\u5fd8\u554a","sharetitle":""},{"threshold":"F","title":"\u5728\u53cb\u60c5\u9762\u524d\uff0c\u8bf1\u60d1\u5f02\u6027\u7684\u672c\u80fd\u5c31\u4f1a\u964d\u4f4e","desc":"\u5bf9\u4f60\u6765\u8bf4\uff0c\u53cb\u60c5\u8fdc\u8fdc\u6bd4\u7231\u60c5\u8981\u66f4\u52a0\u91cd\u8981\u3002\u5728\u672c\u80fd\u7684\u9a71\u4f7f\u4e0b\uff0c\u4f60\u53ef\u80fd\u662f\u60f3\u8bf1\u60d1\u5f02\u6027\uff0c\u4f46\u8003\u8651\u5230\u53cb\u60c5\u7684\u8bdd\uff0c\u4f60\u5c31\u4f1a\u523b\u610f\u63a7\u5236\u81ea\u5df1\u8fd9\u90e8\u5206\u7684\u672c\u80fd\u3002\u6709\u53e5\u8bdd\u53eb\u4eba\u4ee5\u7fa4\u5206\uff0c\u4f60\u662f\u4e2a\u5174\u8da3\u5e7f\u6cdb\u7684\u4eba\uff0c\u4f60\u7684\u8eab\u8fb9\u4e0d\u514d\u805a\u96c6\u4e86\u4e00\u7fa4\u76f8\u540c\u5174\u8da3\u7231\u597d\u7684\u4eba\uff0c\u51b5\u4e14\uff0c\u4f60\u662f\u4e2a\u91cd\u60c5\u91cd\u4e49\u4e4b\u4eba\uff0c\u628a\u53cb\u60c5\u770b\u5f97\u6bd4\u4ec0\u4e48\u90fd\u91cd\u8981\uff0c\u6240\u4ee5\u4e0d\u4f1a\u8f7b\u6613\u53bb\u7834\u574f\u4e00\u6bb5\u611f\u60c5\u3002","sharetitle":""}]);
+    var total=xlist.length; // 总题数
+    var finish = 0; // 已完成题数
+    var score = 0;  
+    var next = 0;
+    var current = 1;
+    function qContent(question){
+   	 document.getElementById('question').innerHTML = current + '、'  +  question;
+    }
+    function startTest(){    	
+    	setTimeout(function () {            
+            addClass(document.getElementById('main'),'animation-next');
+   	        document.getElementById('start').style.display = 'none';
+  	        document.getElementById('wenti').style.display = 'block';
+        },500)        
+    }
+    function creatanserElement( anser){    	
+    	var xieti = '';
+    	for(index in anser){
+    		console.log(index)
+    		xieti +=  "<div id='ti" +index + "'" +" vel='"  +index + "'" +  " num='" +index + ".'" +" class='t-s' onclick='select(this);'><span></span></div>";
+    	}
+    	//console.log(xieti);
+    	document.getElementById('selections').innerHTML = xieti;
+    }
+    function check(s) {
+        var regexp = /^[a-zA-Z]+$/;
+        if(regexp.test(s)){return true;}
+        else {return false;}
+    }
+    function setquestion(i){
+    	creatanserElement(xlist[0].answer);
+     	     	addClass(document.getElementById('question'), 'question-only');
+     	qContent(xlist[i].question);
+     	document.getElementById('ti0').style.display = 'none';
+     			document.getElementById('total').innerHTML = '/' + total;
+		for(anser in xlist[i].answer){			
+			document.getElementById('ti' + anser).innerHTML = xlist[i].answer[anser].title; //换题
+		}	       	
+     }    
+     
+     function paduan(selected){
+    	   // selected = parseInt(selected);
+    	    console.log('selected:' + selected)
+    	    //console.log('finish' + finish)   		        		
+   			for(anser in xlist[finish].answer){	
+   				if(anser == selected){
+   					next = xlist[finish].answer[anser].next;
+   					console.log('next:' + next);
+   					if(check(next)){
+   		       			//addClass(document.getElementById('wenti'),'animation-rotateOut');
+   		       			//location.href = "/wxapi.php/tinytest/result" +  level;  
+   		       			showResult(next);
+   		       			//setTimeout(function () {showResult(next);},500);
+   		       		    current = total;
+   						//console.log("你的答案是："+next);
+
+   						return;
+   					}else{
+   						current = next;
+   					}	
+   					break;
+   				}	
+   			}
+   			next = next -1;
+   			finish = next;
+   			creatanserElement(xlist[next].answer);
+   			for(anser in xlist[next].answer){
+   				qContent(xlist[next].question);
+   				document.getElementById('ti' + anser).innerHTML = xlist[next].answer[anser].title; //换题
+   			}
+        } 
+     
+     function showResult(level){
+     	var answerTitle='';
+     	var answerDesc=''; 
+ 	   	 for(i=0; i< ylist.length; i++){
+ 			 if(ylist[i].threshold == level){
+ 				    answerTitle = ylist[i].title;
+ 				    answerDesc= ylist[i].desc;
+ 				    if(ylist[i].sharetitle !=""){
+ 				    	dataForWeixin.title = ylist[i].sharetitle;
+ 				    }	
+ 				    else if(ylist[i].title !=""){
+ 				    	dataForWeixin.title = "我在《" + dbt + "》中测试结果是：" + ylist[i].title + "。你也来试试";
+ 				    }
+ 				    break;
+ 			 }
+ 		 }
+ 		 document.getElementById('result-title').innerHTML = answerTitle;
+ 		 document.getElementById('result-desc').innerHTML = answerDesc;
+ 		 document.getElementById('dbt').innerHTML = dbt;
+ 		 document.title=dbt;
+ 		// document.getElementById('share-tip').style.display = 'block';	
+ 	 
+     	 document.getElementById('wenti').style.display = 'none';
+     	 document.getElementById('result').style.display = 'block';
+     	 document.getElementById('result-bnt').style.display = 'block';
+        /*document.body.addEventListener('touchmove', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        });*/
+     }
+
+</script>
+  <script>   function select(dom){
+    	removeClass(dom,'active');
+    	removeClass(document.getElementById('main'),'animation-next');
+    	
+    	addClass(dom,'active');
+    	setTimeout(function () {
+            paduan(dom.getAttribute('vel'));
+            document.getElementById('current').innerHTML = current;
+            removeClass(dom,'active');
+            addClass(document.getElementById('main'),'animation-next'); 
+        },500)
+ } 
+   function initGameFont(){	   
+	   if(typeof(fontstyle) != 'undefined'){
+			for(stye in fontstyle[0]){
+			    document.getElementById('ti').style[stye] = fontstyle[0][stye];
+			   // document.getElementById('ti' + anser).style.textAlign = 'center';
+			}
+		}
+   }   
+</script>
+  <script>    function adpthead(){
+        var img = document.getElementById('head-img');
+        console.log(document.body.clientWidth);
+//        alert(document.body.scrollWidth)
+        var imgStyleHeight = img.height;
+        var targetHeight = 100;
+        //alert(imgStyleHeight);
+        if(imgStyleHeight > targetHeight){
+            img.style.marginTop = -(imgStyleHeight-targetHeight)/2 + 'px';
+            img.style.marginBottom= -(imgStyleHeight-targetHeight)/2 + 'px';
+            img.maxHeight = 100 + 'px';
+            img.overflow = 'hidden';
+        }
+    }
+    function setbanner(){
+ 	   //var banner = '';
+// 	  // console.log('banner:' + banner)
+//	   if(banner !=""){
+//		   document.getElementById('head-img').setAttribute('src','http://wetest.qiniudn.com/' + banner);
+//	   }else{		   
+//		   document.getElementById('head-img').setAttribute('src','http://wetest.qiniudn.com//tinytest/multiple/images/banner.jpg');
+//	   }
+    }
+    
+    function initGame(){
+    	if("".trim() == ""){
+   	        document.getElementById('start').style.display = 'none';
+  	        document.getElementById('wenti').style.display = 'block';
+    	}
+    	else{
+        	document.getElementById('home-desc').innerHTML = ''; 
+    	}
+   	   document.getElementById('dbt').innerHTML = dbt;
+   	   document.title=dbt;
+   	   setquestion(0); // 初始化
+   	   setbanner();
+   	   initGameFont();	
+    }
+
+    initGame();
+</script>
+  <script language="javascript">
+
+var dataForWeixin = {
+		appId : "",
+		MsgImg : 'http://i5.7k7kimg.cn/cms/cms10/20141210/110156_6711.jpg',
+		TLImg:'http://i5.7k7kimg.cn/cms/cms10/20141210/110156_6711.jpg',
+		url : window.location.href,
+		title :   '我参加了“' + '妹纸，你到底有多诱人？' + '”测试，你也快来测测',
+		desc :   '很准的呦,你也来试试吧！'
+};
+
+var onBridgeReady = function(){
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "appid": dataForWeixin.appId,
+                    "img_url": dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": window.location.href,
+                    "title": dataForWeixin.title,
+                    "desc": dataForWeixin.desc 
+                }, function(req){
+					location.href=about_us;
+                 });
+             });
+			 
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "appid": dataForWeixin.appId,
+                    "img_url":dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": window.location.href,
+                    "title": dataForWeixin.title,
+                    "desc": dataForWeixin.desc
+                }, function(req){
+				location.href=about_us;
+				});
+            });
+        };
+
+if(document.addEventListener)
+{
+	document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+}
+else if(document.attachEvent)
+{
+	document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+	document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+}   
+		
+</script>
+
+ 
+</body></html>
