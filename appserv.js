@@ -39,7 +39,14 @@ http.createServer(function (req,res){
 		apppath+=urlpath+'index.html';
 	}
 	else{
-		ftype=ftype.split('.')[1];
+		var ll=ftype.length;
+		var pos=0;
+		for(var i=0;i<ll;i++){
+			if(ftype.charAt(i)=='.'){
+				pos=i;
+			}
+		}
+		ftype= ftype.substring(pos+1);
 		apppath+=urlpath;
 	}
 
